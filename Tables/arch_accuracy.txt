@@ -1,0 +1,29 @@
+
+\def\arraystretch{1.2}
+
+\centering
+\begin{tabular}{|l|l|c|c|c|c|}
+\hline
+\multicolumn{1}{|c}{}               & Dataset    & \multicolumn{2}{c|}{ATIS} & \multicolumn{2}{c|}{SNIPS}  \\
+\cline{3-6}
+\multicolumn{1}{|l}{Model}          &            & ID acc & SF f1            & ID acc & SF f1              \\
+\hline
+\multirow{3}{*}{LM+Simple decoder}  & ELMo       & 92{.}36  & 95{.}25            & 96{.}73  & 86{.}38              \\
+\cline{2-6}
+                                    & BERT \textsubscript{base}  & 97{.}77  & 98{.}36            & 98{.}72  & 97{.}84              \\
+\cline{2-6}
+                                    & BERT \textsubscript{large} & 97{.}54  & 98{.}43            & 98{.}72  & 98{.}03              \\
+\hline
+\multirow{3}{*}{LM+CTRAN Decoder}         & ELMo       & 97{.}54  & 98{.}17            & 97{.}25  & 96{.}01              \\
+\cline{2-6}
+                                    & BERT \textsubscript{base}  & 97{.}99  & 98{.}44            & 98{.}86  & 98{.}00              \\
+\cline{2-6}
+                                    & BERT \textsubscript{large} & 97{.}99  & 98{.}43            & 98{.}86  & 98{.}18              \\
+\hline
+\multirow{3}{*}{LM+CTRAN Encoder+CTRAN Decoder} & ELMo       & 97{.}88  & 98{.}25            & 97{.}73  & 96{.}68              \\
+\cline{2-6}
+                                    & BERT \textsubscript{base}  & 97{.}95  & 98{.}39            & 99{.}42  & 98{.}21              \\
+\cline{2-6}
+                                    & BERT \textsubscript{large} & 98{.}07  & 98{.}46            & 99{.}13  & 98{.}30              \\
+\hline
+\end{tabular} 

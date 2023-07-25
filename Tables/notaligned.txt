@@ -1,0 +1,14 @@
+\def\arraystretch{2}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\begin{tabular}[c]{@{}c@{}}مجموعه داده\\ مدل\end{tabular}   & \lr{ATIS} & \lr{SNIPS}  \\                                                 
+\hline
+\lr{LSTM} تراز شده با مکانیزم توجه 
+& 98{/}30                 & 98{/}10                   \\
+\hline
+رمزگشای ترنسفورمر     & 97{/}42                 & 97{/}37                   \\
+\hline
+رمزگشای ترنسفورمر تراز شده     & 98{/}40                 & 98{/}21                   \\
+\hline
+\end{tabular} 

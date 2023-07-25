@@ -1,0 +1,15 @@
+\def\arraystretch{2}
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{1}{|c|}{مجموعه داده} & \multicolumn{2}{c|}{\lr{ATIS}}           & \multicolumn{2}{c|}{\lr{SNIPS}}           \\
+\cline{2-5}
+مدل زبانی / نقش مدل                            & رمزنگار & تعبیه & رمزنگار & تعبیه  \\
+\hline
+\lr{ELMo}                          & 42{/}51         &  (11\%) 47{/}55        & 92{/}37         &  (11\%) 103{/}51        \\
+\hline
+\lr{BERT \textsubscript{base}}     & 42{/}40         &  (10\%) 46{/}71        & 110{/}39        &  (8\%) 119{/}50         \\
+\hline
+\lr{BERT \textsubscript{large}}    & 73{/}57         &  (7\%) 79{/}44         & 182{/}42        &  (6\%) 194{/}24         \\
+\hline
+\end{tabular}

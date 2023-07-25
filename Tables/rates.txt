@@ -1,0 +1,24 @@
+
+\centering
+\arrayrulecolor{black}
+\begin{tabular}{|c|c|c|c|}
+\hline
+لایه / پارامتر                & $\alpha$                                                                   & $\gamma$ & $\rho$  \\
+\hline
+$BERT^{base}_{large}$ & \begin{tabular}[c]{@{}l@{}}$\text{10}^{\text{-}\text{4}}$\\$\text{10}^{\text{-}\text{5}}$\end{tabular} & 0{/}96   & 0{/}1   \\
+\arrayrulecolor[rgb]{0.753,0.753,0.753}\hline
+المو                                           &   $\text{10}^{\text{-}\text{4}}$                                                        & 0{/}96   & 0{/}5   \\
+\hline
+شبکه‌ی کانولوشن و توالی ویژگی پنجره                                     
+& $\text{10}^{\text{-}\text{3}}$                                                          & 0{/}96   & 0{/}0     \\
+\hline
+پشته‌ی رمزگشای ترنسفورمر                            &
+ $\text{10}^{\text{-}\text{4}}$                                                           & 0{/}96   & 0{/}1   \\
+\hline
+رمزگشای تشخیص هدف
+& $\text{10}^{\text{-}\text{4}}$                                                           & 0{/}96   & 0{/}5   \\
+\hline
+رمزگشای تشخیص جای خالی
+& $\text{10}^{\text{-}\text{4}}$                                                          & 0{/}96   & 0{/}5   \\
+\arrayrulecolor{black}\hline
+\end{tabular}

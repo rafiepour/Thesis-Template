@@ -1,0 +1,145 @@
+
+\textwidth=6cm
+\centering
+\arrayrulecolor{black}
+\begin{tabular}{|r|l|}
+\hline\\
+جمله‌ی ورودی &\lr{  show flight and prices kansas city to chicago on next wednesday arriving in chicago by 7 pm}\\ 
+برچسب صحیح &\lr{        :  O O O O B-fromloc.city\_name I-fromloc.city\_name O B-toloc.city\_name O B-depart\_date.date\_relative B-depart\_date.day\_name O O B-toloc.city\_name B-arrive\_time.time\_relative B-arrive\_time.time I-arrive\_time.time}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O O O O B-fromloc.city\_name I-fromloc.city\_name O B-toloc.city\_name O B-depart\_date.date\_relative B-depart\_date.day\_name O O B-toloc.city\_name B-arrive\_time.time\_relative B-arrive\_time.time I-arrive\_time.time}\\ 
+هدف صحیح &\lr{  atis\_flight\#atis\_airfare}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_flight}\\ 
+\hline\hline%---------------------------------\\
+جمله‌ی ورودی &\lr{  what day of the week do flights from nashville to tacoma fly on}\\ 
+برچسب صحیح &\lr{        :  O O O O O O O O B-fromloc.city\_name O B-toloc.city\_name O O}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O O O O O O O O B-fromloc.city\_name O B-toloc.city\_name O O}\\ 
+هدف صحیح &\lr{  atis\_day\_name}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_flight}\\ 
+\hline\hline%---------------------------------\\
+جمله‌ی ورودی &\lr{  what days of the week do flights from san jose to nashville fly on}\\ 
+برچسب صحیح &\lr{        :  O O O O O O O O B-fromloc.city\_name I-fromloc.city\_name O B-toloc.city\_name O O}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O O O O O O O O B-fromloc.city\_name I-fromloc.city\_name O B-toloc.city\_name O O}\\ 
+هدف صحیح &\lr{  atis\_day\_name}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_flight}\\ 
+\hline\hline%---------------------------------\\
+جمله‌ی ورودی &\lr{  to what cities from boston does america west fly first class}\\ 
+برچسب صحیح &\lr{        :  O O O O B-fromloc.city\_name O B-airline\_name I-airline\_name O B-class\_type I-class\_type}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O O O O B-fromloc.city\_name O B-airline\_name I-airline\_name O B-class\_type I-class\_type}\\ 
+هدف صحیح &\lr{  atis\_city}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_flight}\\ 
+\hline\hline%---------------------------------\\
+جمله‌ی ورودی &\lr{  what's the fare for a taxi to denver}\\ 
+برچسب صحیح &\lr{        :  O O O O O B-transport\_type O B-city\_name}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O O O O O B-transport\_type O B-toloc.city\_name}\\ 
+هدف صحیح &\lr{  atis\_ground\_fare}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_airfare}\\ 
+\hline\hline%---------------------------------\\
+جمله‌ی ورودی &\lr{  list all sunday flights from cleveland to nashville and their fares}\\ 
+برچسب صحیح &\lr{        :  O O B-depart\_date.day\_name O O B-fromloc.city\_name O B-toloc.city\_name O O O}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O O B-depart\_date.day\_name O O B-fromloc.city\_name O B-toloc.city\_name O O O}\\ 
+هدف صحیح &\lr{  atis\_flight\#atis\_airfare}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_flight}\\ 
+\hline\hline%---------------------------------\\
+جمله‌ی ورودی &\lr{  list the airfare for american airlines flight 19 from jfk to lax}\\ 
+برچسب صحیح &\lr{        :  O O O O B-airline\_name I-airline\_name O B-flight\_number O B-fromloc.airport\_code O B-toloc.airport\_code}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O O O O B-airline\_name I-airline\_name O B-flight\_number O B-fromloc.airport\_code O B-toloc.city\_name}\\ 
+هدف صحیح &\lr{  atis\_airfare\#atis\_flight}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_airfare}\\ 
+\hline\hline%---------------------------------\\
+جمله‌ی ورودی &\lr{  i need a round trip flight from san diego to washington dc and the fares}\\ 
+برچسب صحیح &\lr{        :  O O O B-round\_trip I-round\_trip O O B-fromloc.city\_name I-fromloc.city\_name O B-toloc.city\_name B-toloc.state\_code O O O}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O O O B-round\_trip I-round\_trip O O B-fromloc.city\_name I-fromloc.city\_name O B-toloc.city\_name B-toloc.state\_code O O O}\\ 
+هدف صحیح &\lr{  atis\_flight\#atis\_airfare}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_flight}\\ 
+\hline\hline%---------------------------------\\
+جمله‌ی ورودی &\lr{  i need a round trip from atlanta to washington dc and the fares leaving in the morning}\\ 
+برچسب صحیح &\lr{        :  O O O B-round\_trip I-round\_trip O B-fromloc.city\_name O B-toloc.city\_name B-toloc.state\_code O O O O O O B-depart\_time.period\_of\_day}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O O O B-round\_trip I-round\_trip O B-fromloc.city\_name O B-toloc.city\_name B-toloc.state\_code O O O O O O B-depart\_time.period\_of\_day}\\ 
+هدف صحیح &\lr{  atis\_flight\#atis\_airfare}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_airfare}\\ 
+\hline\hline%---------------------------------\\
+جمله‌ی ورودی &\lr{  i need a round trip from phoenix to washington dc and the fare leaving in the morning}\\ 
+برچسب صحیح &\lr{        :  O O O B-round\_trip I-round\_trip O B-fromloc.city\_name O B-toloc.city\_name B-toloc.state\_code O O O O O O B-depart\_time.period\_of\_day}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O O O B-round\_trip I-round\_trip O B-fromloc.city\_name O B-toloc.city\_name B-toloc.state\_code O O O O O O B-depart\_time.period\_of\_day}\\ 
+هدف صحیح &\lr{  atis\_flight\#atis\_airfare}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_airfare}\\ 
+\hline\hline%---------------------------------\\
+جمله‌ی ورودی &\lr{  i need flight and airline information for a flight from denver to salt lake city on monday departing after 5 pm}\\ 
+برچسب صحیح &\lr{        :  O O O O O O O O O O B-fromloc.city\_name O B-toloc.city\_name I-toloc.city\_name I-toloc.city\_name O B-depart\_date.day\_name O B-depart\_time.time\_relative B-depart\_time.time I-depart\_time.time}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O O O O O O O O O O B-fromloc.city\_name O B-toloc.city\_name I-toloc.city\_name I-toloc.city\_name O B-depart\_date.day\_name O B-depart\_time.time\_relative B-depart\_time.time I-depart\_time.time}\\ 
+هدف صحیح &\lr{  atis\_flight\#atis\_airline}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_flight}\\ 
+\hline\hline%---------------------------------\\
+جمله‌ی ورودی &\lr{  i need flight and fare information for thursday departing prior to 9 am from oakland going to salt lake city}\\ 
+برچسب صحیح &\lr{        :  O O O O O O O B-depart\_date.day\_name O B-depart\_time.time\_relative I-depart\_time.time\_relative B-depart\_time.time I-depart\_time.time O B-fromloc.city\_name O O B-toloc.city\_name I-toloc.city\_name I-toloc.city\_name}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O O O O O O O B-depart\_date.day\_name O B-depart\_time.time\_relative O B-depart\_time.time I-depart\_time.time O B-fromloc.city\_name O O B-toloc.city\_name I-toloc.city\_name I-toloc.city\_name}\\ 
+هدف صحیح &\lr{  atis\_flight\#atis\_airfare}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_flight}\\ 
+\hline\hline%---------------------------------\\
+جمله‌ی ورودی &\lr{  i need flight and fare information departing from oakland to salt lake city on thursday before 8 am}\\ 
+برچسب صحیح &\lr{        :  O O O O O O O O B-fromloc.city\_name O B-toloc.city\_name I-toloc.city\_name I-toloc.city\_name O B-depart\_date.day\_name B-depart\_time.time\_relative B-depart\_time.time I-depart\_time.time}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O O O O O O O O B-fromloc.city\_name O B-toloc.city\_name I-toloc.city\_name I-toloc.city\_name O B-depart\_date.day\_name B-depart\_time.time\_relative B-depart\_time.time I-depart\_time.time}\\ 
+هدف صحیح &\lr{  atis\_flight\#atis\_airfare}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_flight}\\ 
+\hline\hline%---------------------------------\\
+جمله‌ی ورودی &\lr{  i need flight numbers and airlines for flights departing from oakland to salt lake city on thursday departing before 8 am}\\ 
+برچسب صحیح &\lr{        :  O O O O O O O O O O B-fromloc.city\_name O B-toloc.city\_name I-toloc.city\_name I-toloc.city\_name O B-depart\_date.day\_name O B-depart\_time.time\_relative B-depart\_time.time I-depart\_time.time}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O O O O O O O O O O B-fromloc.city\_name O B-toloc.city\_name I-toloc.city\_name I-toloc.city\_name O B-depart\_date.day\_name O B-depart\_time.time\_relative B-depart\_time.time I-depart\_time.time}\\ 
+هدف صحیح &\lr{  atis\_flight\_no\#atis\_airline}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_flight\_no}\\ 
+\hline\hline%---------------------------------\\
+جمله‌ی ورودی &\lr{  list la}\\ 
+برچسب صحیح &\lr{        :  O B-city\_name}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O B-airline\_code}\\ 
+هدف صحیح &\lr{  atis\_city}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_abbreviation}\\ 
+\hline\hline%---------------------------------\\
+جمله‌ی ورودی &\lr{  list la}\\ 
+برچسب صحیح &\lr{        :  O B-city\_name}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O B-airline\_code}\\ 
+هدف صحیح &\lr{  atis\_city}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_abbreviation}\\ 
+\hline\hline%---------------------------------\\
+جمله‌ی ورودی &\lr{  give me the flights and fares for a trip to cleveland from miami on wednesday}\\ 
+برچسب صحیح &\lr{        :  O O O O O O O O O O B-toloc.city\_name O B-fromloc.city\_name O B-depart\_date.day\_name}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O O O O O O O O O O B-toloc.city\_name O B-fromloc.city\_name O B-depart\_date.day\_name}\\ 
+هدف صحیح &\lr{  atis\_flight}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_flight\#atis\_airfare}\\ 
+\hline\hline%---------------------------------\\
+جمله‌ی ورودی &\lr{  how many northwest flights leave st. paul}\\ 
+برچسب صحیح &\lr{        :  O O B-airline\_name O O B-fromloc.city\_name I-fromloc.city\_name}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O O B-airline\_name O O B-fromloc.city\_name I-fromloc.city\_name}\\ 
+هدف صحیح &\lr{  atis\_flight}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_quantity}\\ 
+\hline\hline%---------------------------------\\
+جمله‌ی ورودی &\lr{  how many northwest flights leave washington dc}\\ 
+برچسب صحیح &\lr{        :  O O B-airline\_name O O B-fromloc.city\_name B-fromloc.state\_code}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O O B-airline\_name O O B-fromloc.city\_name B-fromloc.state\_code}\\ 
+هدف صحیح &\lr{  atis\_flight}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_quantity}\\ 
+\hline\hline%---------------------------------\\
+جمله‌ی ورودی &\lr{  how many flights does northwest have leaving dulles}\\ 
+برچسب صحیح &\lr{        :  O O O O B-airline\_name O O B-fromloc.airport\_name}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O O O O B-airline\_name O O B-fromloc.airport\_name}\\ 
+هدف صحیح &\lr{  atis\_flight}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_quantity}\\ 
+\hline\hline%---------------------------------\\
+جمله‌ی ورودی &\lr{  what is a d9s}\\ 
+برچسب صحیح &\lr{        :  O O O B-aircraft\_code}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O O O B-aircraft\_code}\\ 
+هدف صحیح &\lr{  atis\_abbreviation}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_aircraft}\\ 
+\hline\hline%---------------------------------\\
+جمله‌ی ورودی &\lr{  what is a d9s}\\ 
+برچسب صحیح &\lr{        :  O O O B-aircraft\_code}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O O O B-aircraft\_code}\\ 
+هدف صحیح &\lr{  atis\_abbreviation}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_aircraft}\\ 
+\hline\hline%---------------------------------\\
+جمله‌ی ورودی &\lr{  how many flights does alaska airlines have to burbank}\\ 
+برچسب صحیح &\lr{        :  O O O O B-airline\_name I-airline\_name O O B-toloc.city\_name}\\ 
+برچسب پیش‌بینی شده &\lr{ :  O O O O B-airline\_name I-airline\_name O O B-toloc.city\_name}\\ 
+هدف صحیح &\lr{  atis\_flight}\\ 
+هدف پیش‌بینی شده &\lr{  atis\_quantity}\\
+\hline\hline%---------------------------------\\
+\end{tabular}

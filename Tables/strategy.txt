@@ -1,0 +1,21 @@
+\def\arraystretch{2}
+\centering
+\resizebox{\textwidth}{!}{\begin{tabular}{c|c|cc|cc|}
+\cline{2-6}
+\multicolumn{1}{l|}{}           & مجموعه داده & \multicolumn{2}{c|}{\lr{ATIS}}             & \multicolumn{2}{c|}{\lr{SNIPS}}            \\ \hline
+\multicolumn{1}{|c|}{استراتژی}  & مدل         & \multicolumn{1}{c|}{دقت هدف}   & \lr{f1} جای خالی & \multicolumn{1}{c|}{دقت هدف}   & \lr{f1} جای خالی \\ \hline
+\multicolumn{1}{|c|}{مدل زبانی} &
+ \lr{ELMo + CTRAN's decoder }          & \multicolumn{1}{c|}{97{/}54} & 98{/}17    & \multicolumn{1}{c|}{97{/}25} & 96{/}01    \\ \cline{2-6}
+\multicolumn{1}{|c|}{به عنوان}  &
+ \lr{BERT \textsubscript{base}
+ + CTRAN's decoder}           & \multicolumn{1}{c|}{97{/}99} & 98{/}44    & \multicolumn{1}{c|}{98{/}86} & 98{/}00    \\ \cline{2-6}
+\multicolumn{1}{|c|}{رمزنگار}   &
+ \lr{BERT \textsubscript{large}
+ + CTRAN's decoder}           & \multicolumn{1}{c|}{97{/}99} & 98{/}43    & \multicolumn{1}{c|}{98{/}86} & 98{/}18    \\ \hline
+\multicolumn{1}{|c|}{مدل زبانی} &
+ \lr{CTRAN + ELMo}          & \multicolumn{1}{c|}{97{/}88} & 98{/}25    & \multicolumn{1}{c|}{97{/}73} & 96{/}68    \\ \cline{2-6}
+\multicolumn{1}{|c|}{به عنوان}  &
+ \lr{CTRAN + BERT \textsubscript{base}}           & \multicolumn{1}{c|}{97{/}95} & 98{/}40    & \multicolumn{1}{c|}{99{/}42} & 98{/}21    \\ \cline{2-6}
+\multicolumn{1}{|c|}{تعبیه}     &
+ \lr{CTRAN + BERT \textsubscript{large}}           & \multicolumn{1}{c|}{98{/}07} & 98{/}46    & \multicolumn{1}{c|}{99{/}13} & 98{/}30    \\ \hline
+\end{tabular}} 

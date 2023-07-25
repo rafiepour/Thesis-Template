@@ -1,0 +1,32 @@
+% \usepackage{colortbl}
+\def\arraystretch{2}
+
+\centering
+\arrayrulecolor[rgb]{0.753,0.753,0.753}
+\begin{tabular}{!{\color{black}\vrule}c!{\color{black}\vrule}c|c!{\color{black}\vrule}}
+\arrayrulecolor{black}\hline
+مدل                                                                                               & دقت هدف & \lr{f1} جای خالی  \\
+\hline
+\begin{tabular}[c]{@{}c@{}}\lr{SASBGC$\beta$} \cite{Wang:2020}\end{tabular}                        &  98{/}86 & 96{/}43  \\
+\arrayrulecolor[rgb]{0.753,0.753,0.753}\hline
+\begin{tabular}[c]{@{}c@{}}\lr{Joint Bert$\beta$} \cite{chen:2019} \end{tabular}                   &  98{/}60 & 97{/}00  \\
+\hline
+\begin{tabular}[c]{@{}c@{}}\lr{CM-net$\beta$} \cite{liu:2019} \end{tabular}                        &  99{/}32 & 97{/}31  \\
+\hline
+\begin{tabular}[c]{@{}c@{}}\lr{Masked Graph+CRF$\beta$} \cite{Tang:2020} \end{tabular}             &  99{/}70 & 97{/}20  \\
+\hline
+\begin{tabular}[c]{@{}c@{}}\lr{Elmo+BiLSTM+CRF} \cite{Siddhant:2019} \end{tabular}               	 &  99{/}29 & 93{/}90  \\
+\hline
+\begin{tabular}[c]{@{}c@{}}\lr{Co-interactive Transformer$\beta$}  \cite{Qin:2021} \\\end{tabular} &  98{/}80 & 97{/}10  \\
+\hline
+\begin{tabular}[c]{@{}c@{}}\lr{Federated Learning$\beta$} \cite{huang:2020} \end{tabular}          &  99{/}33 & 97{/}20  \\
+\hline
+\begin{tabular}[c]{@{}c@{}}\lr{Slot-Gated} \cite{goo-etal-2018-slot} \end{tabular}          &  97{/}00 & 88{/}80  \\
+\hline
+\begin{tabular}[c]{@{}c@{}}\lr{Prior Knowledge} \cite{priorknowledge} \end{tabular}          &  98{/}70 & 94{/}70  \\
+\hline
+\begin{tabular}[c]{@{}c@{}}\lr{AISE$\beta$} \cite{yang:2021} \end{tabular}        				 &  98{/}70 & 97{/}20  \\
+\arrayrulecolor{black}\hline
+\lr{\textbf{CTRAN$\beta$}}                                                              &\bf{99{/}42}&\bf{98{/}30}\\
+\hline
+\end{tabular}

@@ -1,0 +1,9 @@
+\centering
+\def\arraystretch{2}
+\begin{tabular}{|ccccc|r|}
+\hline
+\multicolumn{1}{|c}{what} & \multicolumn{1}{c}{is} & \multicolumn{1}{c}{the} & \multicolumn{1}{c}{abbrevation} & d10 & \rl{\textbf{سؤال کاربر}}             \\ \hline
+\multicolumn{1}{|c}{O}    & \multicolumn{1}{c}{O}  & \multicolumn{1}{c}{O}   & \multicolumn{1}{c}{O}           & B-aircraft\_code & \rl{\textbf{برچسب‌های صحیح}} \\ \hline
+\multicolumn{5}{|c|}{atis\_abbreviation}  & \rl{\textbf{هدف کاربر}} \\
+\hline
+\end{tabular}

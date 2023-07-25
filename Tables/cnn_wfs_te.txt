@@ -1,0 +1,14 @@
+\def\arraystretch{2}
+
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{1}{|c|}{مجموعه داده} & \multicolumn{2}{c|}{\lr{ATIS}} & \multicolumn{2}{c|}{\lr{SNIPS}}  \\
+\cline{2-5}
+\multicolumn{1}{|c|}{مدل}   & دقت هدف & \lr{f1} جای خالی            & دقت هدف &  \lr{f1} جای خالی               \\
+\hline
+کانولوشن-توالی ویژگی پنجره-پشته ترنسفورمر                   & 97{/}95  & 98{/}39            & 99{/}42  & 98{/}21              \\
+\hline
+فقط پشته‌ی ترنسفورمر                      & 97{/}88  & 98{/}36            & 99{/}01  & 97{/}91              \\
+\hline
+\end{tabular}

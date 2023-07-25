@@ -1,0 +1,971 @@
+% AThesis v2.2
+
+% این قالب بر اساس فرمت پایان‌نامه‌ها و رساله‌های تحصیلات تکمیلی دانشگاه صنعتی اصفهان تهیه شده است.
+
+% ارسال نظرات جهت بهبود قالب:
+% a101.fakhari@gmail.com
+
+% توصیه می‌شود که از توزیع تک‌لایو (TexLive) استفاده شود:
+% http://tug.org/texlive/acquire-iso.html
+
+% از نصب بودن فونت B ZAR و B Zar Bold بر روی سیستم خود اطمینان حاصل کنید. اگر به مشکل پیدا نکردن فونت برخوردید، از وجود این فونت ها در پوشه Windows/Fonts از طریق CMD مطمین شوید.
+% کمپایلر ادیتور را روی XeLaTeX قرار دهید.
+
+% موفق باشید.
+% امین فخاری
+% ‌دی‌ماه 1394
+% -----------------------------------------------------------------------------------
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{AThesisStyle}[Dec. 27, 2015 AThesisStyle Package]
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Packages ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+% تایپ متن‌های ریاضی
+\usepackage{amsthm,amsmath,amssymb,amsfonts,bm,upgreek}
+
+% نمایش تصاویر قرار داده شده در متن
+\usepackage{graphicx}
+
+% تنظیم حاشیه‌های بالا، پایین، چپ و راست صفحه
+\usepackage{geometry}
+%\usepackage[showframe]{geometry}
+
+% نمایش فرم هر صفحه (برای بررسی فاصله بخش‌های مختلف متن از کناره‌ها)
+%\usepackage{showframe}
+
+% استفاده از رنگ‌ها
+\usepackage{color}
+
+% تعیین سایز فونت‌های بخش‌ها و زیر‌بخش‌ها
+\usepackage{sectsty}
+
+% تعیین فاصله از چپ، بالا و پایین فصل‌ها، بخش‌ها و زیربخش‌ها
+\usepackage{titlesec}
+
+% تنظیمات کپشن‌ها
+\usepackage{caption}
+
+% ظاهر شدن مراجع ،نمایه، فهرست مطالب و اشکال و جداول در فهرست مطالب
+%\usepackage{tocbibind}
+\usepackage[nottoc,notlof,notlot]{tocbibind}
+
+% شروع شدن شماره‌گذاری مراجع از ابتدای متن، نه از ابتدای فهرست مطالب، اشکال یا جداول
+\usepackage{notoccite}
+
+% تنظیمات مربوط به فوت‌نوت‌ها
+\usepackage[bottom]{footmisc}
+
+% برای اینکه فوت‌نوت‌ها در هر صفحه از یک شروع شود
+\usepackage{zref-perpage}
+
+% تنظیمات مربوط به فهرست مطالب
+\usepackage{tocloft}
+
+% تعیین فونت برای فرمول‌ها
+\usepackage{unicode-math}
+
+% تنظیم جدول ها
+\usepackage{array}
+
+% ایجاد لینک‌های رنگی با امکان جهش
+\usepackage{hyperref}
+
+% اضافه کردن خط فاصله بین مراجع پشت‌سرهم
+\usepackage{cite}
+
+% برای کنترل بر روی محیط‌های enumerate، itemize و description
+\usepackage{enumitem}
+
+% برای استفاده از زیرشکل‌ها در اشکال چند قسمتی
+\usepackage{subfig}
+
+% کار با Header و Footer
+\usepackage{fancyhdr}
+
+% ایجاد تورفتگی در پاراگراف‌های اوّل
+%\usepackage{indentfirst}
+
+% تغییر مشخصات فونت‌ها
+\usepackage{fontspec}
+
+% فراخوانی بسته زی‌پرشین (بهتر است آخرین بسته فراخوانی شده باشد)
+\usepackage{xepersian}
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Text Fonts {xepersian} & {fontspec} ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+%% تعيين نوع و سايز فونت‌های متن اصلی
+%\settextfont[Scale=1.12]{XB Zar}
+%\settextfont[Scale=1.3]{Zar}
+
+%\settextfont[Scale=1.3]{B Zar}
+\settextfont[Scale=1.3, ItalicFont=*, ItalicFeatures={FakeSlant=0.32}, BoldItalicFont=* Bold, BoldItalicFeatures={FakeSlant=0.32}]{B Zar}
+\setlatintextfont[Scale=1.15]{Times New Roman}
+
+% تعریف قلم‌های فارسی و انگلیسی برای استفاده در بعضی از قسمت‌های متن
+\defpersianfont\BZarScaleOne[Scale=1.1]{B Zar}
+\deflatinfont\TimesNewRomanScaleOne[Scale=1]{Times New Roman}
+
+% تبدیل آ به الف در حروف ابجد برای استفاده در زیرشکل‌ها و ...
+\makeatletter
+\def\abjad@zero{}
+\def\abj@num@i#1{%
+  \ifcase#1\or الف\or ب\or ج\or د%
+           \or ه‍\or و\or ز\or ح\or ط\fi
+  \ifnum#1=\z@\abjad@zero\fi}
+\def\abj@num@ii#1{%
+  \ifcase#1\or ی\or ک\or ل\or م\or ن%
+           \or س\or ع\or ف\or ص\fi
+  \ifnum#1=\z@\fi\abj@num@i}
+\def\abj@num@iii#1{%
+  \ifcase#1\or ق\or ر\or ش\or ت\or ث%
+            \or خ\or ذ\or ض\or ظ\fi
+  \ifnum#1=\z@\fi\abj@num@ii}
+\def\abj@num@iv#1{%
+  \ifcase#1\or غ\fi
+  \ifnum#1=\z@\fi\abj@num@iii}
+   \let\@latinalph\@alph%
+   \let\@latinAlph\@Alph%
+\def\PersianAlphs{%
+   \let\@alph\abjadnumeral%
+   \let\@Alph\abjadnumeral}
+\def\LatinAlphs{%
+   \let\@alph\@latinalph%
+   \let\@Alph\@latinAlph}
+\PersianAlphs
+\makeatother
+
+% فاصله خطوط در تمام محیط‌های لاتین در متن
+% Method 1
+%\makeatletter
+%\bidi@AtBeginEnvironment{latin}{\linespread{2}}
+%\makeatother
+% Method 2
+%\let\oldlatin=\latin
+%\let\endoldlatin=\endlatin
+%\renewenvironment{latin}{\oldlatin%
+%\baselineskip=1cm
+%}%
+%{\endoldlatin}
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Figures/Tables {array} & Captions {caption} Setting ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+% تعیین فاصله شکل یا جدول قرار گرفته در وسط متن تا متن بالایی و پایینی آن
+\setlength\intextsep{2\baselineskip plus 2mm minus 1mm}
+
+% تعیین فاصله شکل یا جدول قرار گرفته در بالا یا پایین متن تا متن پایین و بالای آن
+\setlength\textfloatsep{3\baselineskip plus 2mm minus 1mm}
+
+% تعیین فاصله بین دو شکل یا جدول متوالی
+\setlength\floatsep{3\baselineskip}
+
+% تعیین فاصله متن جدول‌ها از حاشیه‌های جانبی
+\setlength{\tabcolsep}{1.5mm}
+\renewcommand{\arraystretch}{1.5}
+
+% تعيين فونت و سايز فونت‌ کپشن‌ها، فاصله کپشن‌ها از لبه کاغذ و قرار دادن ":" بعد از شماره آن‌ها
+\DeclareCaptionFont{MyFont}{\fontsize{11pt}{0}\selectfont \BZarScaleOne} % Zar 11
+\DeclareCaptionLabelSeparator{MySeparator}{\,-\,}
+\captionsetup{margin=5mm, font=MyFont, labelsep=MySeparator}
+
+% تعيين فاصله کپشن‌ها از شکل/جدول و متن
+%\captionsetup{belowskip=0pt,aboveskip=0pt}
+% OR
+%\setlength\abovecaptionskip{2mm}
+%\setlength{\belowcaptionskip}{-\baselineskip}
+
+\captionsetup[figure]{aboveskip=2mm}
+\captionsetup[figure]{belowskip=-\baselineskip}
+\captionsetup[table]{aboveskip=2mm}
+\captionsetup[table]{belowskip=\baselineskip}
+% با تنظیمات بالا، فاصله متن تا شکل/جدول و کپشن آن برابر می‌شود ولی در مورد شکل این فاصله دقیقا برابر intextsep می‌شود و در مورد جدول این فاصله برابر مجموع intextsep و baselineskip می‌شود. توجه شود، برای آن‌که در مورد جدول نیز این فاصله دقیقا برابر با intextsep شود باید یا در دستور چهارم مقدار belowskip را صفر بگذاریم وبجای آن جدول را همیشه پایین صفحه قرار دهیم، یعنی [b] و یا قبل از
+%\end{table}
+%در هر جدول، دستور
+%\vspace{-\baselineskip}
+%را قرار دهیم.
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Math Formulas ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+% تعیین فونت و مقیاس فرمول‌ها
+
+\setmathfont[version=lm]{Latin Modern Math}
+\mathversion{lm}
+\DeclareMathSizes{10}{12}{10}{8} % Font 12
+% \DeclareMathSizes{display size}{text size}{script size}{scriptscript size}
+
+%\setmathfont[version=cambria]{Cambria Math}
+%\mathversion{cambria}
+%\DeclareMathSizes{10}{12}{10}{8} % Font 12
+
+% انگليسی کردن اعداد در فرمول‌ها
+%\DefaultMathsDigits
+%\AutoMathsDigits %By default this command is active: In Persian mode, you get Persian digits in math mode and in Latin mode, you get TEX’s default font and digits in math mode.
+
+% تعیین فونت اعداد در فرمول‌ها
+%\setdigitfont[Scale=0.93]{XB Zar}
+%\setdigitfont{Times New Roman}
+
+% تنظیم فاصله فرمول‌ها از سمت چپ (با تعریف fleqn در documentclass)
+\setlength{\mathindent}{0.5cm}
+
+% تنظیم فاصله قبل و بعد از روابط ریاضی
+%\AtBeginDocument{
+%\abovedisplayskip=0pt plus 3pt minus 3pt
+%\belowdisplayskip=0pt plus 3pt minus 3pt
+%\abovedisplayshortskip=0pt plus 3pt minus 3pt
+%\belowdisplayshortskip=0pt plus 3pt minus 3pt
+%}
+\AtBeginDocument{
+\abovedisplayskip=\baselineskip
+\belowdisplayskip=\baselineskip
+\abovedisplayshortskip=\baselineskip
+\belowdisplayshortskip=\baselineskip
+}
+
+% ایجاد فاصله افقی قبل و بعد از میحط ریاضی $$ درون متن
+\setlength\mathsurround{1pt}
+
+% تنظیم اندازه پرانتزهای تو در تو برای نمایش بهتر
+\delimitershortfall=-3pt
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Page Setup {geometry} ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+% تنطیم حاشیه‌های بالا، پایین، چپ و راست صفحه
+\geometry{top=3cm, bottom=2.5cm, left=2.5cm, right=3cm, headsep=1cm}
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Hyperlinks {hyperref} ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\definecolor{darkblue}{rgb}{0,0,0.5}
+\definecolor{darkred}{rgb}{0.5,0,0}
+\hypersetup{colorlinks=true, linkcolor=darkblue, citecolor=darkred, urlcolor=darkblue, bookmarks, bookmarksdepth=3}
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Putting (-) Between Numbers ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+% خط (-) بين شماره عناوين و شماره شکل‌ها
+\SepMark{-}
+
+% خط (-) بعد از شماره عناوین
+%\renewcommand\thesection{\arabic{section}--}
+%\renewcommand\thesubsection{\thesection\arabic{subsection}--}
+%\renewcommand\thesubsubsection{\thesubsection\arabic{subsubsection}--}
+
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ References {cite}  ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+% اضافه کردن خط فاصله بین مراجع پشت‌سرهم (مثلاً [3-5])
+\renewcommand*{\citedash}{-}
+
+% جلوگیری از دو تکیه شدن مراجع بین دو خط متوالی
+\makeatletter
+\def\@cite#1#2{[{#1\if@tempswa ,~#2\fi}]}
+\makeatother
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Paragraph Indentation  ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+% تعیین میزان تورفتگی پاراگراف‌ها
+\setlength{\parindent}{5mm}
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Theorem, Remark, Reminder, ... ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\newtheoremstyle{mystyle}%                % Name
+  {}%                                     % Space above
+  {}%                                     % Space below
+  {\itshape}%                             % Body font
+  {}%                                     % Indent amount
+  {\fontsize{12pt}{0}\selectfont \bfseries \BZarScaleOne} % Theorem head font
+  {.}%                                    % Punctuation after theorem head
+  { }%                                    % Space after theorem head, ' ', or \newline
+  {}%                                     % Theorem head spec (can be left empty, meaning `normal')
+
+\theoremstyle{mystyle}
+\newtheorem{theorem}{قضیه}[chapter]
+\renewcommand\qedsymbol{$\blacksquare$}
+\newtheorem{remark}{تبصره}[chapter]
+\newtheorem{reminder}{یادآوری}[chapter]
+
+% ░░░▒▒▒▓▓▓▓ Chapters, Sections, and Subsections {sectsty & titlesec} ▓▓▓▓▒▒▒░░░
+% تعیین محل، نوع شماره نویسی و سایز فونت عنوان فصل‌ها
+\titleformat{\chapter}[display]
+{\fontsize{20pt}{0}\selectfont  \flushleft  \bfseries \BZarScaleOne} % Zar 13
+{\chaptertitlename\ \tartibi{chapter}}{0.3cm}{\fontsize{20pt}{0}\selectfont \BZarScaleOne} % Zar 13
+%\titleformat{<command>}[<shape>]{<format>}{<label>}{<sep>}{<before-code>}[<after-code>]
+
+% تعیین سایز فونت‌های بخش‌ها و زیر‌بخش‌ها
+\sectionfont{\fontsize{14pt}{\baselineskip}\selectfont \BZarScaleOne} % Zar 12
+\subsectionfont{\fontsize{13pt}{\baselineskip}\selectfont \BZarScaleOne} % Zar 11
+\subsubsectionfont{\fontsize{12pt}{\baselineskip}\selectfont \BZarScaleOne} % Zar 11
+
+% تعیین فاصله از چپ، بالا و پایین فصل‌ها، بخش‌ها و زیربخش‌ها (وجود * برای جلوگیری از ایجاد تورفتگی در پاراگراف‌های اوّل است)
+\titlespacing*{\chapter}{0pt}{2.5cm}{10cm}
+\titlespacing*{\section}{0pt}{1.2\baselineskip}{0pt}
+\titlespacing*{\subsection}{0pt}{1.1\baselineskip}{0pt}
+\titlespacing*{\subsubsection}{0pt}{1\baselineskip}{0pt}
+
+%\titlespacing*{\section}{0pt}{16pt}{0pt}
+%\titlespacing*{\subsection}{0pt}{16pt}{0pt}
+%\titlespacing*{\subsubsection}{0pt}{16pt}{0pt}
+%\titlespacing{<command>}{<left>}{<before-sep>}{<after-sep>}
+% توجه شود در این حالت فاصله بعد از عنوان مجموع <after-sep> و \baselineskip است.
+
+% برای ایجاد فاصله دقیق بعد و قبل از بخش ها هنگامی که از دستور \baselineskip برای فاصله بین خطوط استفاده شود.
+%\newlength{\aftersection}
+%\setlength{\aftersection}{10pt} % Exact Space
+%\addtolength{\aftersection}{-1\baselineskip}
+%\newlength{\beforesection}
+%\setlength{\beforesection}{36pt} % Exact Space
+%\addtolength{\beforesection}{-1\baselineskip}
+%\titlespacing*{\section}{0pt}{\beforesection}{\aftersection}
+
+% حذف شماره صفحه از صفحه اوّل هر فصل
+\makeatletter
+\renewcommand\chapter{\if@openright\cleardoublepage\else\clearpage\fi
+	\thispagestyle{empty}%
+	\global\@topnum\z@
+	\@afterindentfalse
+	\secdef\@chapter\@schapter}
+\makeatother
+
+% این دستور نیز مشابه دستور فوق می‌باشد با این تفاوت که شماره  صفحات فهرست‌ها (فهرسن مطالب، شکل‌ها و جدول‌ها) را نیز حذف می‌کند. توضیحات:
+% صفحه اول فصل‌ها و صفحه‌های فهرست مطالب به طور پیش‌فرض دارای استایل plain می باشد که باعث می‌شود شماره صفحه در پایین قرار گیرد. به منظور حذف این شماره یا تغییر فرمت آن از دستور زیر استفاده می‌شود. در این دستور استایل plain به استایل دیگری مثل empty (در این مثال) یا myheadings یا هر استایل دیگری تبدیل می‌شود.
+%\makeatletter
+%\let\ps@plain\ps@empty
+%\makeatother
+
+\setcounter{secnumdepth}{3}
+
+% ░░░▒▒▒▓▓▓▓ Enumerate, Itemize and Description {enumitem} ▓▓▓▓▒▒▒░░░
+% حذف فاصله‌ی قبل و بین آیتم‌ها
+\setlist[enumerate]{noitemsep, topsep=0pt}
+\setlist[itemize]{noitemsep, topsep=0pt}
+\setlist[description]{noitemsep, topsep=0pt}
+
+% تعریف ترتیب نماد برای آیتم‌ها
+%\renewcommand{\labelitemi}{$\bullet$}
+%\renewcommand{\labelitemii}{-}
+%\renewcommand{\labelitemiii}{$\diamond$}
+%\renewcommand{\labelitemiv}{$\ast$}
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Footnotes ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+% برای اینکه فوت‌نوت‌ها در هر صفحه از یک شروع شود {zref-perpage}
+\zmakeperpage{footnote}
+
+% فاصله بین فوت‌نوت‌ها
+\setlength{\footnotesep}{0.4cm}
+
+% تنظیم فاصله بین متن و فوت‌نوت‌ها
+%\setlength{\skip\footins}{2cm}
+
+% تغییر سایز متن و شماره فوت‌نوت (تنها در پاورقی)
+\renewcommand{\footnotesize}{\fontsize{8pt}{0}\selectfont} 
+
+% تغییر سایز شمارنده فوت‌نوت، هم در متن و هم در پاورقی
+\renewcommand{\thefootnote}{\fontsize{6.5pt}{0}\selectfont\arabic{footnote}}
+
+% تعیین فاصله فوت‌نوت‌ها از حاشیه راست یا چپ
+\setlength{\footnotemargin}{0.2cm}
+
+% تغییر سایز فوت‌نوت بودن تغییر اندازه شمارنده آن
+%\usepackage{footmisc}
+%\renewcommand\footnotelayout{\fontsize{20pt}{15}\selectfont}
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ TOC/LOF/LOT {tocloft} ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+% تعیین عمق‌شماره گذاری در فهرست مطالب (با قرار دادن 2، شماره گذاری subsubsection در فهرست قرار نمی‌گیرد)
+\setcounter{tocdepth}{3}
+
+% تعیین فاصله قبل از عنوان "فهرست مطالب/اشکال/جداول"
+\setlength{\cftbeforetoctitleskip}{0cm}
+\setlength{\cftbeforeloftitleskip}{0cm}
+\setlength{\cftbeforelottitleskip}{0cm}
+
+% تعیین فاصله بعد از عنوان "فهرست مطالب/اشکال/جداول"
+\setlength{\cftaftertoctitleskip}{1cm} % Or \renewcommand{\cftaftertoctitle}{\vspace{3cm}}
+\setlength{\cftafterloftitleskip}{1cm}
+\setlength{\cftafterlottitleskip}{1cm}
+
+% تعیین فونت و محل افقی عنوان "فهرست مطالب/اشکال/جداول"
+\renewcommand{\cfttoctitlefont}{\hspace{6.5cm} \fontsize{12pt}{0}\selectfont \bfseries \BZarScaleOne} % Zar 12
+\renewcommand{\cftloftitlefont}{\hspace{6.5cm} \fontsize{12pt}{0}\selectfont \bfseries \BZarScaleOne} % Zar 12
+\renewcommand{\cftlottitlefont}{\hspace{6.5cm} \fontsize{12pt}{0}\selectfont \bfseries \BZarScaleOne} % Zar 12
+
+% تغییر نام عنوان فهرست‌ها
+%\renewcommand{\contentsname}{فهرست مطالب}
+\renewcommand{\listfigurename}{فهرست اشکال}
+%\renewcommand{\listfigurename}{فهرست شکل‌ها}
+%\renewcommand{\listtablename}{فهرست جدول‌ها}
+
+% اضافه کردن "شکل" و ":" در فهرست اشکال 
+\renewcommand{\cftfigpresnum}{شکل }
+\renewcommand{\cftfigaftersnum}{:}
+
+% اضافه کردن "جدول" و ":" در فهرست جداول 
+\renewcommand{\cfttabpresnum}{جدول }
+\renewcommand{\cfttabaftersnum}{:}
+
+% حذف شماره صفحه فصل‌ها از فهرست مطالب (با استفاده از این دستور شماره مراجع نیز حذف می‌شود!)
+%\makeatletter 
+%\let\stdl@chapter\l@chapter
+%\renewcommand*{\l@chapter}[2]{\stdl@chapter{{#1}}{}}
+%\makeatother
+% دستور فوق از دستور زیر آمده است:
+%\makeatletter
+%\let\stdl@chapter\l@chapter
+%\renewcommand*{\l@chapter}[2]{\stdl@chapter{{#1}}{{#2}}}
+%\makeatother
+
+% تعیین فونت عناوین در فهرست مطالب
+\renewcommand{\cftchapfont}{\bfseries \fontsize{10pt}{0}\selectfont \BZarScaleOne} % Zar 10
+\renewcommand{\cftsecfont}{\fontsize{12pt}{0}\selectfont \BZarScaleOne} % Zar 12
+\renewcommand{\cftsubsecfont}{\fontsize{12pt}{0}\selectfont \BZarScaleOne} % Zar 12
+\renewcommand{\cftsubsubsecfont}{\fontsize{12pt}{0}\selectfont \BZarScaleOne} % Zar 12
+\renewcommand{\cftfigfont}{\fontsize{12pt}{0}\selectfont \BZarScaleOne} % Zar 12
+\renewcommand{\cfttabfont}{\fontsize{12pt}{0}\selectfont \BZarScaleOne} % Zar 12
+
+% تعیین فونت شماره‌ها در فهرست مطالب
+\renewcommand\cftchappagefont{\fontsize{12pt}{0}\selectfont \BZarScaleOne} % Zar 12
+\renewcommand\cftsecpagefont{\fontsize{12pt}{0}\selectfont \BZarScaleOne} % Zar 12
+\renewcommand\cftsubsecpagefont{\fontsize{12pt}{0}\selectfont \BZarScaleOne} % Zar 12
+\renewcommand\cftsubsubsecpagefont{\fontsize{12pt}{0}\selectfont \BZarScaleOne} % Zar 12
+\renewcommand\cftfigpagefont{\fontsize{12pt}{0}\selectfont \BZarScaleOne} % Zar 12
+\renewcommand\cfttabpagefont{\fontsize{12pt}{0}\selectfont \BZarScaleOne} % Zar 12
+
+%  ایجاد فاصله عمودی بین عنوان فصل/بخش/زیربخش آن‌ها
+\renewcommand\cftchapafterpnum{\vspace{0cm}}
+\renewcommand\cftsecafterpnum{\vspace{0cm}}
+\renewcommand\cftsubsecafterpnum{\vspace{0cm}}
+\renewcommand\cftsubsubsecafterpnum{\vspace{0cm}}
+
+% حذف یا ایجاد نقاط در فهرست مطالب
+%\renewcommand{\cftdot}{} % for no dots
+%\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}} % for parts
+%\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % for chapters
+%\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections
+%\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}} % for subsections
+%\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}} % for subsubsections
+
+% تعیین فاصله بین نقاط (چگالی نقاط) در فهرست مطالب
+\renewcommand{\cftdotsep}{0.2}
+
+% تعیین فاصله عناوین تا لبه چارچوب فهرست مطالب
+\setlength\cftchapindent{0cm}
+\setlength\cftsecindent{0cm}
+\setlength\cftsubsecindent{0.35cm}
+\setlength\cftsubsubsecindent{0.70cm}
+\setlength\cftfigindent{0cm}
+\setlength\cfttabindent{0cm}
+
+%  ایجاد فاصله افقی بین عنوان فصل/بخش/زیربخش/شکل/جدول تا چارچوب
+%\setlength{\cftchapnumwidth}{1.4cm}
+%\setlength{\cftsecnumwidth}{0.75cm}
+%\setlength{\cftsubsecnumwidth}{1.1cm}
+%\setlength{\cftfignumwidth}{1.7cm}
+%\setlength{\cfttabnumwidth}{1.8cm}
+% ایراد دستورات فوق این است که بین عنوان فصل/بخش/زیربخش/شکل/جدول تا چارچوب یک فاصله استاتیک ایجاد می‌کند و با بزرگترشدن شماره فصل/بخش/زیربخش/شکل/جدول، فاصله عنوان تا شماره آن کم می‌شود. به منظور ایجاد فاصله دینامیک، از دستور زیر استفاده میکنیم:
+\makeatletter
+\renewcommand{\numberline}[1]{%
+  \@cftbsnum #1\@cftasnum\hspace*{2mm}\@cftasnumb%
+}
+\makeatother
+% در این دستور، عبارت
+% \hspace*{2mm}
+% فاصله افقی بین شماره فصل/بخش/زیربخش/شکل/جدول تا عنوان آن‌ها رو تعیین می‌کند که میتواند به هر شکلی همچون ~ یا \quad و ... تعریف گردد.
+
+% اضافه کردن "عنوان" و "صفحه" بالای فهرست مطالب، اشکال و جداول
+\addtocontents{toc}{~\underline{\textbf{\fontsize{10pt}{0}\selectfont {\BZarScaleOne عنــوان}}}\hfill\underline{\textbf{\fontsize{10pt}{0}\selectfont {\BZarScaleOne صفحه}}}\vspace{0.2cm}\protect\par} % Zar 10
+
+\addtocontents{lof}{~\underline{\textbf{\fontsize{10pt}{0}\selectfont {\BZarScaleOne عنــوان}}}\hfill\underline{\textbf{\fontsize{10pt}{0}\selectfont {\BZarScaleOne صفحه}}}\vspace{-0.1cm}\protect\par} % Zar 10
+
+\addtocontents{lot}{~\underline{\textbf{\fontsize{10pt}{0}\selectfont {\BZarScaleOne عنــوان}}}\hfill\underline{\textbf{\fontsize{10pt}{0}\selectfont {\BZarScaleOne صفحه}}}\vspace{-0.1cm}\protect\par} % Zar 10
+
+% اضافه کردن "فصل" و ":" در ابتدای فصل‌ها در فهرست مطالب بصورت: "فصل 1:"
+%\renewcommand\cftchapaftersnum{:}
+%\renewcommand\cftchappresnum{\chaptername~}
+
+% اضافه کردن "پیوست" در ابتدای پیوست‌ها در فهرست مطالب بصورت: "پیوست آ:"
+%\makeatletter
+%\g@addto@macro\appendix{%
+%  \addtocontents{toc}{%
+%    \protect\renewcommand{\protect\cftchappresnum}{\appendixname~}%
+%  }%
+%}
+
+% اضافه کردن "فصل" و ":" در ابتدای فصل‌ها در فهرست مطالب بصورت: "فصل اول:"
+\renewcommand\cftchapaftersnum{:}
+\makeatletter
+\bidi@patchcmd{\Hy@org@chapter}{%
+	\addcontentsline{toc}{chapter}%
+	{\protect\numberline{\thechapter}#1}%
+}{%
+\addcontentsline{toc}{chapter}%
+{\protect\numberline{\chaptername~\tartibi{chapter}}#1}%
+}{}{}
+\makeatother
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Some Definitions ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\makeatletter
+
+\def\DepartmentFa#1{\gdef\@DepartmentFa{#1}}
+\def\@DepartmentFa{}
+
+\def\TitleFa#1{\gdef\@TitleFa{#1}}
+\def\@TitleFa{}
+
+\def\ThesisTypeFa#1{\gdef\@ThesisTypeFa{#1}}
+\def\@ThesisTypeFa{}
+
+\def\DegreeFa#1{\gdef\@DegreeFa{#1}}
+\def\@DegreeFa{}
+
+\def\FieldFa#1{\gdef\@FieldFa{#1}}
+\def\@FieldFa{}
+
+\def\YourFullnameFa#1{\gdef\@YourFullnameFa{#1}}
+\def\@YourFullnameFa{}
+
+\def\YourEmailAddress#1{\gdef\@YourEmailAddress{#1}}
+\def\@YourEmailAddress{}
+
+\def\FirstSupervisorFa#1{\gdef\@FirstSupervisorFa{#1}}
+\def\@FirstSupervisorFa{}
+
+\def\SecondSupervisorFa#1{\gdef\ST@SecondSupervisorFa{#1}}
+\def\@SecondSupervisorFa{}
+
+\def\FirstAdvisorFa#1{\gdef\@FirstAdvisorFa{#1}}
+\def\@FirstAdvisorFa{}
+
+\def\SecondAdvisorFa#1{\gdef\ST@SecondAdvisorFa{#1}}
+\def\@SecondAdvisorFa{}
+
+\def\FirstExaminerFa#1{\gdef\ST@FirstExaminerFa{#1}}
+\def\@FirstExaminerFa{}
+
+\def\SecondExaminerFa#1{\gdef\ST@SecondExaminerFa{#1}}
+\def\@SecondExaminerFa{}
+
+\def\ThirdExaminerFa#1{\gdef\ST@ThirdExaminerFa{#1}}
+\def\@ThirdExaminerFa{}
+
+\def\FourthExaminerFa#1{\gdef\ST@FourthExaminerFa{#1}}
+\def\@FourthExaminerFa{}
+
+\def\FifthExaminerFa#1{\gdef\ST@FifthExaminerFa{#1}}
+\def\@FifthExaminerFa{}
+
+\def\DeanOfDepartmentFa#1{\gdef\@DeanOfDepartmentFa{#1}}
+\def\@DeanOfDepartmentFa{}
+
+\def\YearFa#1{\gdef\@YearFa{#1}}
+\def\@YearFa{}
+
+\def\DateFa#1{\gdef\@DateFa{#1}}
+\def\@DateFa{}
+
+\def\Prefix#1{\gdef\@Prefix{#1}}
+\def\@Prefix{}
+
+\def\DepartmentEn#1{\gdef\@DepartmentEn{#1}}
+\def\@DepartmentEn{}
+
+\def\TitleEn#1{\gdef\@TitleEn{#1}}
+\def\@TitleEn{}
+
+\def\DegreeEn#1{\gdef\@DegreeEn{#1}}
+\def\@DegreeEn{}
+
+\def\YourFullnameEn#1{\gdef\@YourFullnameEn{#1}}
+\def\@YourFullnameEn{}
+
+\def\DateEn#1{\gdef\@DateEn{#1}}
+\def\@DateEn{}
+
+\def\FirstSupervisorEn#1{\gdef\@FirstSupervisorEn{#1}}
+\def\@FirstSupervisorEn{}
+
+\def\SecondSupervisorEn#1{\gdef\ST@SecondSupervisorEn{#1}}
+\def\@SecondSupervisorEn{}
+
+\def\FirstAdvisorEn#1{\gdef\@FirstAdvisorEn{#1}}
+\def\@FirstAdvisorEn{}
+
+\def\SecondAdvisorEn#1{\gdef\ST@SecondAdvisorEn{#1}}
+\def\@SecondAdvisorEn{}
+
+\def\FirstExaminerEn#1{\gdef\ST@FirstExaminerEn{#1}}
+\def\@FirstExaminerEn{}
+
+\def\SecondExaminerEn#1{\gdef\ST@SecondExaminerEn{#1}}
+\def\@SecondExaminerEn{}
+
+\def\ThirdExaminerEn#1{\gdef\ST@ThirdExaminerEn{#1}}
+\def\@ThirdExaminerEn{}
+
+\def\FourthExaminerEn#1{\gdef\ST@FourthExaminerEn{#1}}
+\def\@FourthExaminerEn{}
+
+\def\FifthExaminerEn#1{\gdef\ST@FifthExaminerEn{#1}}
+\def\@FifthExaminerEn{}
+
+\def\DeanOfDepartmentEn#1{\gdef\@DeanOfDepartmentEn{#1}}
+\def\@DeanOfDepartmentEn{}
+
+\def\FirstSupervisorEmailAddress#1{\gdef\@FirstSupervisorEmailAddress{#1}}
+\def\@FirstSupervisorEmailAddress{}
+
+\def\FirstAdvisorEmailAddress#1{\gdef\@FirstAdvisorEmailAddress{#1}}
+\def\@FirstAdvisorEmailAddress{}
+
+\def\SecondSupervisorEmailAddress#1{\gdef\@SecondSupervisorEmailAddress{#1}}
+\def\@SecondSupervisorEmailAddress{}
+
+\makeatother
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Title Page ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\makeatletter
+\newcommand{\MakeTitlePage}{
+\clearpage
+\thispagestyle{empty}
+\newgeometry{left=3cm, right=3cm, top=2cm, bottom=2.5cm}
+{\BZarScaleOne
+\begin{center}
+\includegraphics[scale=1]{Settings/kashanu_logo.pdf}
+\\
+{\fontsize{10pt}{0}\selectfont % Zar 10
+\textbf{
+دانشگاه کاشان
+}}\\[0.35cm]
+{\fontsize{14pt}{0}\selectfont \@DepartmentFa}\\ % Zar 14
+\vspace*{\fill}
+{\fontsize{16pt}{0}\selectfont \textbf{\@TitleFa}}\\ % Zar 16
+\vspace*{\fill}
+{\fontsize{16pt}{0}\selectfont \@ThesisTypeFa~\@DegreeFa~\@FieldFa}\\[1.5cm] % Zar 16
+{\fontsize{12pt}{0}\selectfont \textbf{\@YourFullnameFa}}\\ % Zar 12
+\vspace*{\fill}
+\ifx\ST@SecondSupervisorFa\undefined
+{\fontsize{14pt}{0}\selectfont
+استاد راهنما
+} \else {\fontsize{14pt}{0}\selectfont
+استادهای راهنما
+}\fi \\[0.4cm] % Zar 14
+\ifx\ST@SecondSupervisorFa\undefined
+{\fontsize{12pt}{0}\selectfont \textbf{\@FirstSupervisorFa}}
+\else {\fontsize{12pt}{0}\selectfont \textbf{\@FirstSupervisorFa~~و~~\ST@SecondSupervisorFa}} \fi \\[0.4cm]% Zar 12
+{\fontsize{14pt}{0}\selectfont
+استاد مشاور\\[0.4cm]}
+{\fontsize{12pt}{0}\selectfont \textbf{\@FirstAdvisorFa}}
+\\
+
+
+
+\vspace*{\fill}
+{\fontsize{10pt}{0pt}\selectfont \textbf{\@YearFa}} % Zar 10
+\end{center}
+}
+\restoregeometry
+}
+\makeatother
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Signature Page - Farsi ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\newcounter{RowNoFa}
+\newcommand\RowNumberFa{\stepcounter{RowNoFa}\arabic{RowNoFa}}
+
+\makeatletter
+\newcommand{\MakeFarsiSignaturePage}{
+\clearpage
+\thispagestyle{empty}
+\newgeometry{left=3cm, right=3cm, top=2cm, bottom=2.5cm}
+{\BZarScaleOne
+\begin{center}
+\includegraphics[scale=1]{Settings/kashanu_logo.pdf}
+\\
+{\fontsize{10pt}{0}\selectfont % Zar 10
+\textbf{
+دانشگاه کاشان
+}}\\[0.35cm]
+{\fontsize{14pt}{0}\selectfont \@DepartmentFa}\\ % Zar 14
+\vspace*{\fill}
+{\fontsize{16pt}{0}\selectfont \@ThesisTypeFa~\@DegreeFa~رشته~\@FieldFa~\@Prefix~\@YourFullnameFa
+\\[0.5cm] 
+تحت عنوان
+}\\ % Zar 16
+\vspace*{\fill}
+{\fontsize{14pt}{0}\selectfont \textbf{\@TitleFa}} % Zar 14
+\vspace*{\fill}
+\end{center}
+{\fontsize{13pt}{0}\selectfont % Zar 13
+در تاریخ
+~\@DateFa~
+توسط کمیته تخصصی زیر مورد بررسی و تصویب نهایی قرار گرفت:‎\\
+\vspace{0.5cm}
+
+\noindent
+\begin{tabular}{rrr}
+\RowNumberFa - &
+استاد راهنمای \@ThesisTypeFa &
+\hspace{2cm}\@FirstSupervisorFa\\[0.7cm]
+\ifx\ST@SecondSupervisorFa\undefined \else
+\RowNumberFa - &
+استاد راهنمای \@ThesisTypeFa &
+\hspace{2cm}\ST@SecondSupervisorFa\\[0.7cm]\fi
+\RowNumberFa - &
+استاد مشاور \@ThesisTypeFa &
+\hspace{2cm}\@FirstAdvisorFa\\[0.7cm]
+\ifx\ST@SecondAdvisorFa\undefined \else
+\RowNumberFa - &
+استاد مشاور \@ThesisTypeFa &
+\hspace{2cm}\ST@SecondAdvisorFa\\[0.7cm]\fi
+\ifx\ST@FirstExaminerFa\undefined \else
+\RowNumberFa - &
+استاد داور &
+\hspace{2cm}\ST@FirstExaminerFa\\[0.7cm]\fi
+\ifx\ST@SecondExaminerFa\undefined \else
+\RowNumberFa - &
+استاد داور &
+\hspace{2cm}\ST@SecondExaminerFa\\[0.7cm]\fi
+\ifx\ST@ThirdExaminerFa\undefined \else
+\RowNumberFa - &
+استاد داور &
+\hspace{2cm}\ST@ThirdExaminerFa\\[0.7cm]\fi
+\ifx\ST@FourthExaminerFa\undefined \else
+\RowNumberFa - &
+استاد داور &
+\hspace{2cm}\ST@FourthExaminerFa\\[0.7cm]\fi
+\ifx\ST@FifthExaminerFa\undefined \else
+\RowNumberFa - &
+استاد داور &
+\hspace{2cm}\ST@FifthExaminerFa\\[0.7cm]\fi
+\multicolumn{2}{r}{سرپرست تحصیلات تکمیلی دانشکده} &
+\hspace{2cm}\@DeanOfDepartmentFa
+\end{tabular}
+}}
+\restoregeometry
+}
+\makeatother
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ CopyRight Page ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\newcommand{\MakeCopyRightPage}{
+\clearpage
+\thispagestyle{empty}
+\vspace*{\fill}
+\hspace*{\fill}
+\begin{minipage}{9cm}
+{\BZarScaleOne
+{\fontsize{14pt}{0.9cm}\selectfont  % Zar 14
+\noindent
+{\bfseries
+کليه‌ی حقوق مادی مترتب بر نتايج مطالعات، ابتکارات و نوآوری‌های ناشی از تحقيق موضوع اين پايان‌نامه (رساله) متعلق به دانشگاه کاشان است.
+
+}}}
+\end{minipage}
+\hspace*{\fill}
+\vspace*{\fill}
+}
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Table of Contents ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\newcommand{\MakeTableOfContents}{
+\clearpage
+\newgeometry{top=3cm, left=2.5cm, right=3cm, bottom=3cm, footskip=2cm}
+\baselineskip=0.6cm
+\phantomsection
+%\addcontentsline{toc}{section}{فهرست مطالب}‎
+\tableofcontents
+\restoregeometry
+}
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ List of Figures ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\newcommand{\MakeListOfFigures}{
+\clearpage
+\newgeometry{top=3cm, left=2.5cm, right=3cm, bottom=3cm, footskip=2cm}
+\baselineskip=0.6cm
+\phantomsection
+%\addcontentsline{toc}{section}{فهرست اشکال}‎
+\listoffigures
+\restoregeometry
+}
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ List of Tables ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\newcommand{\MakeListOfTables}{
+\clearpage
+\newgeometry{top=3cm, left=2.5cm, right=3cm, bottom=3cm, footskip=2cm}
+\baselineskip=0.6cm
+\phantomsection
+%\addcontentsline{toc}{section}{فهرست جداول}‎
+\listoftables
+\restoregeometry
+}
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Farsi Abstract Page ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\makeatletter
+\def\AbstractFa#1{\gdef\@AbstractFa{#1}}
+\def\@AbstractFa{}
+
+\def\KeywordsFa#1{\gdef\@KeywordsFa{#1}}
+\def\@KeywordsFa{}
+\makeatother
+
+\makeatletter
+\newcommand{\MakeFarsiAbstract}{
+\clearpage
+\thispagestyle{empty}
+\phantomsection
+\vspace*{\fill}
+%\addcontentsline{toc}{section}{چکیده}‎
+\baselineskip=0.7cm
+{
+{ \par\noindent \textbf{چکیده}\\ \@AbstractFa \\ \textbf{کلمات کلیدی}\\ \@KeywordsFa} % Zar 11
+}
+}
+\makeatother
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ English Abstract Page ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\makeatletter
+\def\AbstractEn#1{\gdef\@AbstractEn{#1}}
+\def\@AbstractEn{}
+
+\def\KeywordsEn#1{\gdef\@KeywordsEn{#1}}
+\def\@KeywordsEn{}
+\makeatother
+
+\makeatletter
+\newcommand{\MakeEnglishAbstract}{
+\clearpage
+\thispagestyle{empty}
+\begin{latin}
+\baselineskip=0.6cm
+{\TimesNewRomanScaleOne
+\begin{center}
+{\fontsize{14pt}{0}\selectfont \textbf{\@TitleEn}}\\ % TNR 14
+\vspace{1.5cm}
+{\fontsize{14pt}{0}\selectfont \@YourFullnameEn}\\ % TNR 14
+{\fontsize{11pt}{0}\selectfont \@YourEmailAddress}\\ % TNR 11
+\vspace{0.6cm}
+{\fontsize{12pt}{0}\selectfont \@DateEn} \\ % TNR 12
+{\fontsize{12pt}{0}\selectfont \@DepartmentEn}\\ % TNR 12
+{\fontsize{12pt}{0}\selectfont University of Kashan, Isfahan 87317-53153, Iran}\\ % TNR 12
+{\fontsize{12pt}{0}\selectfont Degree: \@DegreeEn}\\ % TNR 12
+{\fontsize{12pt}{0}\selectfont Language: Farsi}\\ % TNR 12
+
+\end{center}
+{\fontsize{11pt}{0}\selectfont \noindent
+\ifx\ST@SecondSupervisorEn\undefined \textbf{Supervisor:~\@FirstSupervisorEn,~\@FirstSupervisorEmailAddress. \\ \textbf{Advisor:~\@FirstAdvisorEn,~\@FirstAdvisorEmailAddress.}} \else
+\textbf{
+\begin{tabular}{@{}ll}
+Supervisors:&\@FirstSupervisorEn,~\@FirstSupervisorEmailAddress.\\[0.2cm]
+&\ST@SecondSupervisorEn,~\@SecondSupervisorEmailAddress.
+\end{tabular}
+
+}\fi }\\ % TNR 11
+\vspace*{\fill}
+}
+
+%\baselineskip=0.5cm
+
+{\TimesNewRomanScaleOne
+{\fontsize{13pt}{15}\selectfont \par\noindent\justify \textbf{Abstract}\\ \fontsize{12pt}{15}\selectfont\@AbstractEn \\ \fontsize{13pt}{15}\selectfont\textbf{Keywords} \\ \fontsize{12pt}{15}\selectfont\@KeywordsEn \justify‌} %یه نیم فاصله گذاشتم اینجا ک باگ بگیره TNR 10
+}
+
+\end{latin}
+}
+\makeatother
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Signature Page - English ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\newcounter{RowNoEn}
+\newcommand\RowNumberEn{\stepcounter{RowNoEn}\arabic{RowNoEn}}
+
+\makeatletter
+\newcommand{\MakeEnglishSignaturePage}{
+\clearpage
+\thispagestyle{empty}
+\newgeometry{left=3cm, right=3cm, top=2cm, bottom=2.5cm}
+\begin{latin}
+{\TimesNewRomanScaleOne
+\begin{center}
+\includegraphics[scale=1]{Settings/kashanu_logo.pdf}
+\\
+{\fontsize{14pt}{0}\selectfont \textbf{University of Kashan}}\\[0.2cm] % TNR 14
+{\fontsize{12pt}{0}\selectfont \@DepartmentEn}\\ % TNR 12
+\vspace*{\fill}
+{\fontsize{16pt}{0}\selectfont \textbf{\@TitleEn}}\\ % TNR 16
+\vspace*{\fill}
+{\fontsize{12pt}{0}\selectfont A Thesis}\\[0.1cm] % TNR 12
+{\fontsize{12pt}{0}\selectfont Submitted in partial fulfillment of the requirements}\\[0.1cm] % TNR 12
+{\fontsize{12pt}{0}\selectfont for the degree of \@DegreeEn}\\ % TNR 12
+\vspace*{\fill}
+{\fontsize{12pt}{0}\selectfont \textbf{By\\[0.25cm] \@YourFullnameEn}} % TNR 12
+\end{center}
+\vspace*{\fill}
+{\fontsize{12pt}{0}\selectfont Evaluated and Approved by the Thesis Committee, on \@DateEn \\ % TNR 12
+\vspace{0.6cm}
+
+\noindent
+\begin{tabular}{ll}
+\RowNumberEn - &  \@FirstSupervisorEn~(Supervisor)\\[0.6cm]
+\ifx\ST@SecondSupervisorEn\undefined \else
+\RowNumberEn - &  \ST@SecondSupervisorEn~(Supervisor)\\[0.6cm]\fi
+\RowNumberEn - &  \@FirstAdvisorEn~(Advisor)\\[0.6cm]
+\ifx\ST@SecondAdvisorEn\undefined \else
+\RowNumberEn - &  \ST@SecondAdvisorEn~(Advisor)\\[0.6cm]\fi
+\ifx\ST@FirstExaminerEn\undefined \else
+\RowNumberEn - &  \ST@FirstExaminerEn~(Examiner)\\[0.6cm]\fi
+\ifx\ST@SecondExaminerEn\undefined \else
+\RowNumberEn - &  \ST@SecondExaminerEn~(Examiner)\\[0.6cm]\fi
+\ifx\ST@ThirdExaminerEn\undefined \else
+\RowNumberEn - &  \ST@ThirdExaminerEn~(Examiner)\\[0.6cm]\fi
+\ifx\ST@FourthExaminerEn\undefined \else
+\RowNumberEn - &  \ST@FourthExaminerEn~(Examiner)\\[0.6cm]\fi
+\ifx\ST@FifthExaminerEn\undefined \else
+\RowNumberEn - &  \ST@FifthExaminerEn~(Examiner)\\[0.6cm]\fi
+\multicolumn{2}{l}{Department Graduate Coordinator:~\@DeanOfDepartmentEn}
+\end{tabular}
+}}
+\end{latin}
+\restoregeometry
+}
+\makeatother
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Appendices ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\newcommand{\MakeAppendices}{
+\clearpage
+
+\appendix
+
+\setcounter{chapter}{3}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+\setcounter{equation}{0}
+\setcounter{theorem}{0}
+\setcounter{remark}{0}
+\setcounter{reminder}{0}
+
+\phantomsection
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
+\chapter*{پیوست‌ها}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
+
+\addcontentsline{toc}{chapter}{پیوست‌ها}‎
+}
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ References ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+
+\newcommand{\MakeReferences}{
+\clearpage
+\titlespacing*{\chapter}{0pt}{-\baselineskip}{0.5cm}
+\fontsize{11pt}{14.4}\selectfont
+\renewcommand{\bibname}{{مراجع}\hfill}
+}
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ ENtoFA Vocab ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\newcommand{\MakeEnVocab}{
+	\clearpage
+	\newlength{\originalVOffset}
+	\newlength{\originalHOffset}
+	\setlength{\originalVOffset}{\voffset}   
+	\setlength{\originalHOffset}{\hoffset}
+	\setlength{\voffset}{0cm}
+	\setlength{\hoffset}{0cm}
+	\includepdf[pages=1-2,nup=2x1,pagecommand={\textbf{\rl{\rightline{\fontsize{15pt}{14.4}\selectfont واژه‌نامه انگلیسی به فارسی}}}\vspace{-\baselineskip}},width=(\textwidth*5/9)]{Tables/entofa.pdf}
+	\includepdf[pages=3-,nup=2x1,pagecommand={},width=(\textwidth*5/9)]{Tables/entofa.pdf}
+	\setlength{\voffset}{\originalVOffset}
+	\setlength{\hoffset}{\originalHOffset}
+}
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ FAtoEN Vocab ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\newcommand{\MakeFaVocab}{
+	\clearpage
+	\setlength{\originalVOffset}{\voffset}   
+	\setlength{\originalHOffset}{\hoffset}
+	\setlength{\voffset}{0cm}
+	\setlength{\hoffset}{0cm}
+	\centering
+	\includepdf[pages=1-2,nup=2x1,pagecommand={\textbf{\rl{\rightline{\fontsize{15pt}{14.4}\selectfont واژه‌نامه فارسی به انگلیسی}}}\vspace{-\baselineskip}},width=(\textwidth*5/9)]{Tables/fatoen.pdf}
+	\includepdf[pages=3-,nup=2x1,pagecommand={},width=(\textwidth*5/9)]{Tables/fatoen.pdf}
+	\setlength{\voffset}{\originalVOffset}
+	\setlength{\hoffset}{\originalHOffset}
+}
