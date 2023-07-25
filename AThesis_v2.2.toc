@@ -1,0 +1,79 @@
+\nobreakspace {}\relax $\@@underline {\hbox {\beginR \textbf {\fontsize {10pt}{0}\selectfont {\BZarScaleOne عنــوان}}\endR }}\mathsurround \z@ $\relax \hfill \relax $\@@underline {\hbox {\beginR \textbf {\fontsize {10pt}{0}\selectfont {\BZarScaleOne صفحه}}\endR }}\mathsurround \z@ $\relax \vspace {0.2cm}\par 
+\contentsline {chapter}{\numberline {1}پیش‌درآمد}{1}{chapter.1}%
+\contentsline {section}{\numberline {1-1}مقدمه}{2}{section.1.1}%
+\contentsline {section}{\numberline {1-2}تعریف مسئله: طراحی یک مدل برای درک زبان طبیعی}{2}{section.1.2}%
+\contentsline {section}{\numberline {1-3}اهمیت مسئله}{4}{section.1.3}%
+\contentsline {section}{\numberline {1-4}اهداف پژوهش}{6}{section.1.4}%
+\contentsline {section}{\numberline {1-5}ساختار پایان‌نامه}{7}{section.1.5}%
+\contentsline {chapter}{\numberline {2}ادبیات پژوهش}{8}{chapter.2}%
+\contentsline {section}{\numberline {2-1}مقدمه}{9}{section.2.1}%
+\contentsline {section}{\numberline {2-2}مفاهیم پایه}{9}{section.2.2}%
+\contentsline {section}{\numberline {2-3}شبکه‌ی عصبی}{11}{section.2.3}%
+\contentsline {section}{\numberline {2-4}شبکه‌ی عصبی بازگشتی}{12}{section.2.4}%
+\contentsline {section}{\numberline {2-5}حافظه‌ی کوتاه‌مدت طولانی}{14}{section.2.5}%
+\contentsline {subsection}{\numberline {2-5-1}حافظه‌ی کوتاه‌مدت طولانی دوطرفه}{16}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2-5-2}مکانیزم توجه}{17}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2-5-3}ضعف ذاتی}{18}{subsection.2.5.3}%
+\contentsline {section}{\numberline {2-6}شبکه‌ی عصبی کانولوشنی}{18}{section.2.6}%
+\contentsline {section}{\numberline {2-7}میدان تصادفی شرطی زنجیره‌ی خطی}{20}{section.2.7}%
+\contentsline {section}{\numberline {2-8}ترنسفورمرها}{21}{section.2.8}%
+\contentsline {subsection}{\numberline {2-8-1}مکانیزم توجه چند سر}{22}{subsection.2.8.1}%
+\contentsline {subsubsection}{\numberline {2-8-1-1}توجه به خود}{24}{subsubsection.2.8.1.1}%
+\contentsline {subsubsection}{\numberline {2-8-1-2}توجه متقابل}{24}{subsubsection.2.8.1.2}%
+\contentsline {subsection}{\numberline {2-8-2}تعبیه‌ی موقعیتی}{25}{subsection.2.8.2}%
+\contentsline {subsection}{\numberline {2-8-3}جریان داده}{25}{subsection.2.8.3}%
+\contentsline {subsubsection}{\numberline {2-8-3-1}زمان آموزش}{25}{subsubsection.2.8.3.1}%
+\contentsline {subsubsection}{\numberline {2-8-3-2}زمان استنتاج}{26}{subsubsection.2.8.3.2}%
+\contentsline {section}{\numberline {2-9}تعبیه‌ی نشانه‌ها}{27}{section.2.9}%
+\contentsline {subsection}{\numberline {2-9-1}تعبیه‌ی برداری ثابت}{27}{subsection.2.9.1}%
+\contentsline {subsubsection}{\numberline {2-9-1-1}\lr {Word2Vec}}{27}{subsubsection.2.9.1.1}%
+\contentsline {subsubsection}{\numberline {2-9-1-2}\lr {GloVe}}{28}{subsubsection.2.9.1.2}%
+\contentsline {subsection}{\numberline {2-9-2}مدل‌های زبانی}{28}{subsection.2.9.2}%
+\contentsline {subsubsection}{\numberline {2-9-2-1}المو}{28}{subsubsection.2.9.2.1}%
+\contentsline {subsubsection}{\numberline {2-9-2-2}برت}{30}{subsubsection.2.9.2.2}%
+\contentsline {section}{\numberline {2-10}جمع‌بندی}{31}{section.2.10}%
+\contentsline {chapter}{\numberline {3}کارهای پیشین}{32}{chapter.3}%
+\contentsline {section}{\numberline {3-1}‌مقدمه}{33}{section.3.1}%
+\contentsline {section}{\numberline {3-2}مبتنی بر نمایش تعبیه برداری ثابت}{33}{section.3.2}%
+\contentsline {section}{\numberline {3-3}مبتنی بر مدل زبانی به عنوان رمزنگار}{38}{section.3.3}%
+\contentsline {section}{\numberline {3-4}مبتنی بر مدل زبانی به عنوان تعبیه‌گر}{39}{section.3.4}%
+\contentsline {section}{\numberline {3-5}جمع‌بندی}{42}{section.3.5}%
+\contentsline {chapter}{\numberline {4}مدل پیشنهادی}{43}{chapter.4}%
+\contentsline {section}{\numberline {4-1}مقدمه}{44}{section.4.1}%
+\contentsline {section}{\numberline {4-2}طرح مدل}{44}{section.4.2}%
+\contentsline {section}{\numberline {4-3}رمزنگار}{44}{section.4.3}%
+\contentsline {subsection}{\numberline {4-3-1}مدل زبانی پیش‌آموز شده}{46}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4-3-2}شبکه‌ی کانولوشنی}{46}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4-3-3}توالی ویژگی پنجره}{47}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4-3-4}پشته‌ی رمزنگار ترنسفورمر}{48}{subsection.4.3.4}%
+\contentsline {section}{\numberline {4-4}رمزگشا}{48}{section.4.4}%
+\contentsline {subsection}{\numberline {4-4-1}رمزگشای تشخیص هدف}{48}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4-4-2}رمزگشای پر کردن جای خالی}{49}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4-5}تفسیر خروجی}{50}{section.4.5}%
+\contentsline {chapter}{\numberline {5}پیاده‌سازی و نتایج}{51}{chapter.5}%
+\contentsline {section}{\numberline {5-1}مقدمه}{52}{section.5.1}%
+\contentsline {section}{\numberline {5-2}مجموعه داده}{52}{section.5.2}%
+\contentsline {subsection}{\numberline {5-2-1}\lr {ATIS}}{52}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5-2-2}\lr {SNIPS}}{53}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5-3}معیارهای ارزیابی}{53}{section.5.3}%
+\contentsline {subsection}{\numberline {5-3-1}امتیاز \lr {f1} برای پر کردن جای خالی}{53}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5-3-2}دقت برای تشخیص هدف}{54}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5-4}تنظیمات آزمایش}{54}{section.5.4}%
+\contentsline {section}{\numberline {5-5}نتایج و آنالیز}{55}{section.5.5}%
+\contentsline {subsection}{\numberline {5-5-1}اثر لایه کانولوشن با رمزنگار ترنسفورمر}{57}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5-5-2}اندازه‌ی هسته}{57}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5-5-3}ترازی رمزگشای ترنسفورمر}{58}{subsection.5.5.3}%
+\contentsline {subsection}{\numberline {5-5-4}شیوه‌ی استفاده از مدل زبانی در معماری مدل}{59}{subsection.5.5.4}%
+\contentsline {section}{\numberline {5-6}هزینه‌ی محاسبات}{60}{section.5.6}%
+\contentsline {section}{\numberline {5-7}بررسی شیب آموزش}{61}{section.5.7}%
+\contentsline {section}{\numberline {5-8}خطاهای باقی مانده}{63}{section.5.8}%
+\contentsline {subsection}{\numberline {5-8-1}تحلیل خطاها‌ی مدل پیشنهادی در \lr {ATIS}}{64}{subsection.5.8.1}%
+\contentsline {subsection}{\numberline {5-8-2}تحلیل خطاهای مدل پیشنهادی در \lr {SNIPS}}{64}{subsection.5.8.2}%
+\contentsline {chapter}{\numberline {6}نتیجه‌گیری}{65}{chapter.6}%
+\setcounter {tocdepth}{-1}
+\setcounter {tocdepth}{2}
+\contentsline {chapter}{پیوست‌ها}{68}{appendix*.44}%
+\contentsline {section}{\numberline {پ-1}جزئیات اشتباهات مدل}{68}{section.Alph3.1}%
+\contentsline {subsection}{\numberline {پ-1-1}اشتباهات در مجموعه داده‌ی\lr {ATIS}}{69}{subsection.Alph3.1.1}%
+\contentsline {subsection}{\numberline {پ-1-2}اشتباهات در مجموعه داده‌ی\lr {SNIPS}}{73}{subsection.Alph3.1.2}%
+\contentsline {chapter}{{مراجع}\hfill }{74}{appendix*.45}%

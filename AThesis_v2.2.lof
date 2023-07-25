@@ -1,0 +1,39 @@
+\nobreakspace {}\relax $\@@underline {\hbox {\beginR \textbf {\fontsize {10pt}{0}\selectfont {\BZarScaleOne عنــوان}}\endR }}\mathsurround \z@ $\relax \hfill \relax $\@@underline {\hbox {\beginR \textbf {\fontsize {10pt}{0}\selectfont {\BZarScaleOne صفحه}}\endR }}\mathsurround \z@ $\relax \vspace {-0.1cm}\par 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1-1}{\ignorespaces فرایند عملکرد سیستم‌های گفت‌وگو\relax }}{3}{figure.caption.5}%
+\contentsline {figure}{\numberline {1-2}{\ignorespaces دستیار دیجیتال استفاده شده در وبسایت‌ها برای بهبود تجربه‌ی کاربری مشتریان \relax }}{5}{figure.caption.7}%
+\contentsline {subfigure}{\numberline {(الف)}{\ignorespaces {دستیار دیجیتال مسترکارت}}}{5}{subfigure.2.1}%
+\contentsline {subfigure}{\numberline {(ب)}{\ignorespaces {دستیار شخصی گوگل}}}{5}{subfigure.2.2}%
+\contentsline {figure}{\numberline {1-3}{\ignorespaces دستیار دیجیتال استفاده شده در وبسایت‌ها برای بهبود تجربه‌ی کاربری مشتریان \relax }}{6}{figure.caption.8}%
+\contentsline {subfigure}{\numberline {(الف)}{\ignorespaces {دستیار دیجیتال فروشگاه مایکروسافت}}}{6}{subfigure.3.1}%
+\contentsline {subfigure}{\numberline {(ب)}{\ignorespaces {پشتیبان دیجیتال شرکت راه‌آهن امترک}}}{6}{subfigure.3.2}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2-1}{\ignorespaces شبکه‌ی عصبی تماماً متصل با دو لایه‌ی میانی}}{11}{figure.caption.9}%
+\contentsline {figure}{\numberline {2-2}{\ignorespaces یک بلوک از شبکه‌ی عصبی بازگشتی\relax }}{12}{figure.caption.10}%
+\contentsline {figure}{\numberline {2-3}{\ignorespaces شبکه‌ی عصبی بازگشتی گسترده شده در بعد زمان}}{13}{figure.caption.11}%
+\contentsline {figure}{\numberline {2-4}{\ignorespaces شبکه‌ی عصبی بازگشتی در نقش رمزگشا، گسترده شده در بعد زمان}}{14}{figure.caption.12}%
+\contentsline {figure}{\numberline {2-5}{\ignorespaces یک بلوک از حافظه کوتاه‌مدت طولانی\relax }}{15}{figure.caption.13}%
+\contentsline {figure}{\numberline {2-6}{\ignorespaces شبکه‌ی \lr {LSTM} دوطرفه}}{16}{figure.caption.14}%
+\contentsline {figure}{\numberline {2-7}{\ignorespaces مکانیزم توجه}}{17}{figure.caption.15}%
+\contentsline {figure}{\numberline {2-8}{\ignorespaces کانولوشن یک هسته بر روی ماتریس ورودی}}{19}{figure.caption.16}%
+\contentsline {figure}{\numberline {2-9}{\ignorespaces معماری شبکه‌ی ترنسفورمر}}{22}{figure.caption.17}%
+\contentsline {figure}{\numberline {2-10}{\ignorespaces سمت چپ توجه ضرب نقطه‌ای مقیاس شده}}{23}{figure.caption.18}%
+\contentsline {figure}{\numberline {2-11}{\ignorespaces معماری مدل زبانی المو}}{29}{figure.caption.19}%
+\contentsline {figure}{\numberline {2-12}{\ignorespaces معماری مدل زبانی برت}}{30}{figure.caption.20}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3-1}{\ignorespaces ساختار مدل \lr {Aligned BLSTM}}}{34}{figure.caption.21}%
+\contentsline {figure}{\numberline {3-2}{\ignorespaces ساختار مدل \lr {Aligned CNN-BLSTM}}}{34}{figure.caption.22}%
+\contentsline {figure}{\numberline {3-3}{\ignorespaces ساختار مدل \lr {Slot-Gate}}}{35}{figure.caption.23}%
+\contentsline {figure}{\numberline {3-4}{\ignorespaces ساختار مدل \lr {Inter-Related}}}{36}{figure.caption.24}%
+\contentsline {figure}{\numberline {3-5}{\ignorespaces ساختار مدل پیشنهادی \lr {CharEmbed+GRU}}}{37}{figure.caption.25}%
+\contentsline {figure}{\numberline {3-6}{\ignorespaces ساختار مدل \lr {PKJL}}}{38}{figure.caption.26}%
+\contentsline {figure}{\numberline {3-7}{\ignorespaces ساختار مدل \lr {SASGBC}}}{39}{figure.caption.27}%
+\contentsline {figure}{\numberline {3-8}{\ignorespaces ساختار مدل \lr {Federated-Learning}}}{40}{figure.caption.28}%
+\contentsline {figure}{\numberline {3-9}{\ignorespaces ساختار مدل \lr {Co-Interactive Transformer}}}{40}{figure.caption.29}%
+\contentsline {figure}{\numberline {3-10}{\ignorespaces ساختار مدل \lr {AISE}}}{41}{figure.caption.30}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4-1}{\ignorespaces معماری مدل پیشنهادی \lr {CTran}}}{45}{figure.caption.31}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5-1}{\ignorespaces شیب آموزش مدل پیشنهادی بر روی مجموعه داده‌ی \lr {ATIS}.\relax }}{62}{figure.caption.41}%
+\contentsline {figure}{\numberline {5-2}{\ignorespaces شیب آموزش مدل پیشنهادی بر روی مجموعه داده‌ی \lr {SNIPS}.\relax }}{63}{figure.caption.42}%
+\addvspace {10\p@ }

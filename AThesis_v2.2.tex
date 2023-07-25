@@ -1,0 +1,198 @@
+% AThesis v2.2
+
+% این قالب بر اساس فرمت پایان‌نامه‌ها و رساله‌های تحصیلات تکمیلی دانشگاه صنعتی اصفهان تهیه شده است.
+
+% ارسال نظرات جهت بهبود قالب:
+% a101.fakhari@gmail.com
+
+% توصیه می‌شود که از توزیع تک‌لایو (TexLive) استفاده شود:
+% http://tug.org/texlive/acquire-iso.html
+
+% از نصب بودن فونت B ZAR و B Zar Bold بر روی سیستم خود اطمینان حاصل کنید. اگر به مشکل پیدا نکردن فونت برخوردید، از وجود این فونت ها در پوشه Windows/Fonts از طریق CMD مطمین شوید.
+% کمپایلر ادیتور را روی XeLaTeX قرار دهید.
+
+% موفق باشید.
+% امین فخاری
+% ‌دی‌ماه 1394
+% -----------------------------------------------------------------------------------
+
+% نکات:
+
+% برای آن‌که پردازش فایل و مشاهده خروجی در هنگام نوشتن پایان‌نامه آسان‌تر و سریع‌تر انجام شود، انجام موارد زیر توصیه می گردد:
+% الف) فصل‌ها و بخش‌هایی که در حال نوشتن آن‌ها نیستید را غیر فعال کنید. به‌عنوان مثال، در این قالب، این دستورات را می‌توان در صورت عدم نیاز با اضافه کردن % به طور موقت غیرفعال کرد:
+% \MakeTitlePage
+% \MakeFarsiSignaturePage
+% \input{Chapters/nowledgments}
+% \MakeCopyRightPage
+% \input{Chapters/Dedication}
+% \MakeTableOfContents
+% \MakeListOfFigures
+% \MakeListOfTables
+% \MakeFarsiAbstract
+% \input{Chapters/Chapter#}
+% \MakeAppendices
+% \input{Chapters/Appendices}
+% \MakeEnglishAbstract
+% \MakeEnglishSignaturePage
+% ب) از گزینه draft برای فراخوانی کلاس استفاده کنید. یعنی
+% \documentclass[a4paper,fleqn,10pt,oneside,draft]{book}
+% این گزینه حالت چرکنویس را ایفا می‌کند و بر روی بسته‌های مختلف اثرهای متفاوتی دارد. به‌عنوان مثال: به جای شکل، تنها چهارچوب آن نمایش داده شود، لینک‌های hyperref غیر فعال گردد، فایل‌های خارجی را در بسته listings اضافه نمی‌کند و ... و همه این موارد سبب کاهش زمان اجرا و حجم فایل می‌شود.
+
+% در صورتی که میخواهید به سطر بعد بروید اما نمیخواهید بین دو کلمه‌ای که نوشتید فاصله بیفتد کافی است در انتهای خط اول  (بدون فاصله) کاراکتر % را اضافه کنید. با این عمل، لاتک خط فاصله ایجاد شده در اثر تغییر سطر را به عنوان توضیح اضافه یا کامنت در نظر میگیرد و در خروجی اعمال نمی‌کند.
+
+% توصیه می‌شود از شکل‌های برداری با فرمت PDF استفاده شود. این کار علاوه بر افزایش کیفیت رسال/پایان‌نامه/گزارش، باعث کاهش حجم شکل‌ها (و در نتیجه  کاهش حجم فایل نهایی) و همچنین کاهش زمان پردازش می‌شود.
+
+% در این قالب سعی شده است که از تمامی بخش‌های موجود در پایان‌نامه‌ها نمونه‌ای آورده شود.
+
+\documentclass[a4paper,fleqn,10pt,oneside]{book}
+%-----------------------------
+% بسته‌های دلخواه را در این قسمت اضافه نمایید:
+\usepackage{colortbl} % برای تنظیم رنگ خط جدول
+\usepackage{longtable} % برای جدول های طولانی
+\usepackage{ragged2e} % برای جاستیفای کردن انگلیسی ابسترکت
+\usepackage{setspace} % برای تنظیم اندازه خط ها در ابسترکت
+\usepackage{pifont} % برای بولت ها
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+%-----------------------------
+\usepackage[final]{pdfpages}
+\usepackage{Settings/AThesisStyle}
+
+%-----------------------------
+% دستورهای مورد نیاز را در این قسمت اضافه نمایید:
+
+%-----------------------------
+
+\begin{document}
+
+\pagestyle{plain}
+\pagenumbering{adadi}
+\setcounter{page}{2}
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ In the Name of Allah ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+%%\clearpage
+%%\thispagestyle{empty}
+%%\begin{figure}[t]
+%%\centering
+%%\includegraphics[scale=1.3]{Settings/Allah.pdf}
+%%\end{figure}
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Title Page ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\DepartmentFa{دانشکده مهندسی برق و کامپیوتر}
+%%\ThesisTypeFa{رساله} % 
+\ThesisTypeFa{پایان‌نامه}% Or \ThesisTypeFa{پیشنهادیه پایان‌نامه}
+%%\DegreeFa{دکتری} % Or 
+\DegreeFa{کارشناسی ارشد}
+\FieldFa{مهندسی نرم‌افزار}
+\YourFullnameFa{مهرداد رفیعی‌پور}
+\FirstSupervisorFa{دکتر جواد سلیمی سرتختی}
+\FirstAdvisorFa{دکتر فرشته دهقانی}
+%\SecondSupervisorFa{دکتر فرشته دهقانی} % Optional (Remove It If You Don't Have)
+\YearFa{1401}
+\TitleFa{
+ارائه‌ی یک مدل برای درک زبان طبیعی
+\\[0.4cm]
+%%توسط انگشتان نرم
+ با استفاده از شبکه‌های عصبی عمیق
+}
+% اگر عنوان رساله طولانی بود، در دو خط به صورت نشان داده شده تقسیم شود.
+
+\MakeTitlePage
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Signature - Farsi ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\Prefix{آقای} %\Prefix{خانم}
+\DateFa{1401/11/30}
+\FirstAdvisorFa{دکتر فرشته دهقانی}
+%\SecondAdvisorFa{دکتر مشاور دوم} % Optional (Remove It If You Don't Have)
+\FirstExaminerFa{}
+\SecondExaminerFa{} % Optional (Remove It If You Don't Have)
+\ThirdExaminerFa{} % Optional (Remove It If You Don't Have)
+%\FourthExaminerFa{دکتر داور چهارم} % Optional (Remove It If You Don't Have)
+%\FifthExaminerFa{دکتر داور پنجم} % Optional (Remove It If You Don't Have)
+\DeanOfDepartmentFa{}
+
+%\MakeFarsiSignaturePage
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Acknowledgments ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+%%\input{Chapters/Acknowledgments}
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ CopyRight ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+%%\MakeCopyRightPage
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Dedication ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\input{Chapters/Dedication}
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Abstract - Farsi ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\input{Chapters/AbstractFa}
+\MakeFarsiAbstract
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Table of Contents/Figures/Tables ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\MakeTableOfContents
+\MakeListOfFigures
+\MakeListOfTables
+
+% ----------------------------------------------------------------------------
+\clearpage
+\pagestyle{myheadings}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Chapters ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\clearpage
+\baselineskip=0.9cm
+
+\input{Chapters/Chapter1}
+\input{Chapters/Chapter2}
+\input{Chapters/Chapter3}
+\input{Chapters/Chapter4}
+\input{Chapters/Chapter5}
+\input{Chapters/Chapter6}
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Appendices ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\MakeAppendices
+\input{Chapters/Appendices}
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ References ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\MakeReferences
+%\bibliographystyle{Settings/ModifiedIEEEtranFa}
+%\bibliographystyle{ieeetr}
+\bibliographystyle{Settings/IEEEtran}
+%\lr{\bibliography{References}}
+\bibliography{References}
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ ENtoFA Vocabulary ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\MakeEnVocab
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ FAtoEN Vocabulary ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\MakeFaVocab
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Abstract - English ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\DepartmentEn{Department of Electrical and Computer Engineering}
+%%\DegreeEn{Doctor of Philosophy (PhD)} % Or 
+\DegreeEn{Master of Science (MSc)} 
+\YourFullnameEn{Mehrdad RafiePour}
+\YourEmailAddress{rafiepour@grad.kashanu.ac.ir}
+\DateEn{19/2/2023}
+\FirstSupervisorEn{Javad Salimi Sartakhti, Prof.}
+\FirstSupervisorEmailAddress{salimi@kashanu.ac.ir}
+\FirstAdvisorEn{Fereshteh Dehghani, Prof.}
+\FirstAdvisorEmailAddress{fdehghani@kashanu.ac.ir}
+%\SecondSupervisorEn{Fereshteh Dehghani, Prof.} % Optional (Remove It If You Don't Have)
+%\SecondSupervisorEmailAddress{dehghani@kashanu.ac.ir} % Optional (Remove It If You Don't Have)
+\TitleEn{Proposing a Model for Natural Language Understanding  \\[0.2cm] Using Deep Neural Networks}
+% اگر عنوان رساله طولانی بود، در دو خط به صورت نشان داده شده تقسیم شود.
+
+\input{Chapters/AbstractEn}
+\MakeEnglishAbstract
+
+% ░░░░░░░▒▒▒▒▒▒▓▓▓▓ Signature - English ▓▓▓▓▒▒▒▒▒▒░░░░░░░
+\FirstAdvisorEn{Fereshteh Dehghani, Prof.}
+%\SecondAdvisorEn{Second Advisor, Assist. Prof.} % Optional (Remove It If You Don't Have)
+\FirstExaminerEn{First Examiner, Prof.}
+\SecondExaminerEn{Second Examiner, Prof.} % Optional (Remove It If You Don't Have)
+%\ThirdExaminerEn{Third Examiner, Prof.} % Optional (Remove It If You Don't Have)
+%\FourthExaminerEn{Fourth Examiner, Prof.} % Optional (Remove It If You Don't Have)
+%\FifthExaminerEn{Fifth Examiner, Prof.} % Optional (Remove It If You Don't Have)
+\DeanOfDepartmentEn{Dean, Prof.}
+
+%\MakeEnglishSignaturePage
+
+\end{document} 
