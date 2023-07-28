@@ -37,3 +37,11 @@
 - در صورتی که میخواهید به سطر بعد بروید اما نمیخواهید بین دو کلمه‌ای که نوشتید فاصله بیفتد کافی است در انتهای خط اول  (بدون فاصله) کاراکتر % را اضافه کنید. با این عمل، لاتک خط فاصله ایجاد شده در اثر تغییر سطر را به عنوان توضیح اضافه یا کامنت در نظر میگیرد و در خروجی اعمال نمی‌کند.
 
  تشکر فراوان از آقای فخاری و آقای جان نثاری که نسخه‌ی پایه‌ی این قالب را ایجاد کردند.
+ 
+![Language](https://img.shields.io/badge/Language-LaTeX-blue)
+![Version](https://img.shields.io/badge/Version-2.2-fuchsia)
+![Compiler](https://img.shields.io/badge/Compiler-XeLaTeX-red)
+![IDE](https://img.shields.io/badge/IDE-TexStudio-yellow)
+![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)
+
+ 
